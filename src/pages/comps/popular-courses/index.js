@@ -18,6 +18,7 @@ function Index() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   return (
     <>
