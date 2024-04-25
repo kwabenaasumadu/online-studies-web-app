@@ -8,7 +8,7 @@ function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 18) {
+      if (window.scrollY > 23) {
         setIsVisible(true);
       }
     };
