@@ -7,7 +7,7 @@ function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 65) {
+      if (window.scrollY > 250) {
         setIsVisible(true);
       }
     };
@@ -18,7 +18,7 @@ function Index() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
 
   return (
     <>
