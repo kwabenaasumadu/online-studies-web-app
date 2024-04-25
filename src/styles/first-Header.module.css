@@ -1,5 +1,142 @@
-.container{
+.container {
    width: 70%;
    margin: 0 auto;
    background-color: none;
 }
+
+.container_items {
+   display: grid;
+   grid-template-columns: 2fr 1fr 1fr auto;
+   padding-top: 5%;
+}
+
+.container_item_1 {
+   width: auto;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.container_item_1 h1 {
+   text-transform: uppercase;
+   font-size: 25px;
+   font-family: 'metropolis';
+   color: #ffffff;
+}
+
+.container_item_1 span {
+   text-transform: uppercase;
+   font-size: 13px;
+   font-family: 'metropolis';
+   margin-top: 5px;
+   color: #ffffff;
+}
+
+.container_item_2 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.container_item_2_icon{
+   margin-right: 10px;
+   color: #ffffff;
+}
+
+.icon_1{
+   font-size: 50px;
+   color: #ffffff;
+
+}
+
+.container_item_2_des{
+   width: 100%;
+}
+
+.container_item_2_des span{
+   color: #ffffff;
+   font-weight: 600;
+}
+.container_item_2_des h1{
+   font-size: 20px;
+   color: #ffffff;
+   font-weight: 100;
+}
+
+
+
+
+
+.container_item_3{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.container_item_3_icon{
+   width: 100%;
+   color: #ffffff;
+}
+
+.container_item_3_icon .icon_2{
+   font-size: 50px;
+}
+
+.container_item_3_des h1{
+   font-size: 20px;
+   color: #ffffff;
+   font-weight: 100;
+}
+
+.container_item_3_des span{
+   color:#ffffff;
+   font-weight: 600;
+}
+
+
+
+.container_item_4{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.social_icons{
+   margin-left: 20px;
+   background-color: #f2f2f2f2;
+   border-radius: 50%;
+   color: green;
+   font-size: 35px;
+   padding: 5px;
+   transition: 0.5s ease-in-out;
+   animation-name: changeColor;
+   animation-duration: 5s;
+   animation-iteration-count: infinite;
+}
+
+.social_icons:hover{
+   background-color: green;
+   color: #fff;
+   transform: scaleX(1.05);
+}
+
+@keyframes changeColor {
+   0%, 20% {
+     background-color: #73819e;
+     color: #fff;
+   }
+   25%, 45% {
+     background-color: rgb(143, 173, 202);
+     color: #fff;
+   }
+   50%, 70% {
+     background-color: #ba7683;
+     color: #fff;
+   }
+   75%, 95% {
+     background-color: #8db39b;
+     color: #fff;
+   }
+ }
+ 
