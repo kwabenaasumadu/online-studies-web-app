@@ -24,6 +24,12 @@
    font-family: 'metropolis';
    font-size: 18px;
    color: #ffff;
+   transition: 1s ease-in-out;
+}
+
+.container_items_1 .link:hover{
+   color: #1eb2a6;
+   transform: scaleX(1.4);
 }
 
 .container_items_2{
