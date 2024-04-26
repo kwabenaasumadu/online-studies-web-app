@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "../../../styles/second-Header.module.css";
 import Link from "next/link";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Index() {
   return (
     <>
       <div className={styles.container}>
         <div className={styles.container_items}>
+          <div className={styles.menuIcon}>
+            <MenuIcon />
+            <h1>menu</h1>
+          </div>
           <div className={styles.container_items_1}>
             <Link href="/" className={styles.link}>
               Home

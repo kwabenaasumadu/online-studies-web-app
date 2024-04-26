@@ -51,21 +51,25 @@
    justify-content: center;
    align-items: center;
    padding: 15px;
-   margin-bottom: 8%; 
-   opacity: 0; /* Start with opacity 0 */
+   margin-bottom: 8%;
+   opacity: 0;
+   /* Start with opacity 0 */
    animation-name: fadeIn;
-   animation-duration: 5s; /* Adjust animation duration as needed */
+   animation-duration: 5s;
+   /* Adjust animation duration as needed */
    animation-fill-mode: forwards;
 }
-.logo_container{
+
+.logo_container {
    margin-right: 15px;
 }
-.logo{
+
+.logo {
    font-size: 60px;
    color: #1eb2a6;
 }
 
-.container_items_2_box_details h1{
+.container_items_2_box_details h1 {
    font-size: 20px;
    font-family: 'metropolis';
 }
@@ -73,23 +77,67 @@
 
 @keyframes fadeIn {
    0% {
-     opacity: 0;
-     transform: translateY(30px); 
+      opacity: 0;
+      transform: translateY(30px);
    }
+
    100% {
-     opacity: 1; /* Fully visible */
-     transform: translateY(0);
+      opacity: 1;
+      /* Fully visible */
+      transform: translateY(0);
    }
- }
- 
- .container_items_2_box:nth-child(1) {
-   animation-delay: 0.2s; /* Delay for the first box */
- }
- 
- .container_items_2_box:nth-child(2) {
-   animation-delay: 0.4s; /* Delay for the second box */
- }
- 
- .container_items_2_box:nth-child(3) {
-   animation-delay: 0.6s; /* Delay for the third box */
- }
+}
+
+.container_items_2_box:nth-child(1) {
+   animation-delay: 0.2s;
+   /* Delay for the first box */
+}
+
+.container_items_2_box:nth-child(2) {
+   animation-delay: 0.4s;
+   /* Delay for the second box */
+}
+
+.container_items_2_box:nth-child(3) {
+   animation-delay: 0.6s;
+   /* Delay for the third box */
+}
+
+
+
+@media (max-width:700px) {
+   .container_items {
+      grid-template-columns: 1fr;
+      width: 90%;
+   }
+
+   .container_items_1_image {
+      display: none;
+   }
+
+   .container_items_2 h1{
+      font-size: 20px;
+      width: 100%;
+   }
+   .container_items_2_box{
+      padding: 7px;
+      margin-left: -2%;
+   }
+   .logo {
+      font-size: 50px;
+      color: #1eb2a6;
+   }
+
+   .container_items_2_box_details h1 {
+      font-size: 15px;
+      font-family: 'metropolis';
+   }
+
+   .container_items_2_box_details p {
+      font-size: 14px;
+      font-family: 'metropolis';
+      font-weight: 100;
+      letter-spacing: 1px;
+   }
+   
+}

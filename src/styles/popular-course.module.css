@@ -122,3 +122,62 @@
       /* Fully visible */
    }
 }
+
+
+@media (max-width:700px) {
+   .container {
+      margin-top: 20%;
+   }
+
+   .container_header span {
+      font-size: 18px;
+   }
+
+   .container_header h1 {
+      font-size: 20px;
+      width: 90%;
+      text-align: center;
+   }
+
+   .container_items {
+      grid-template-columns: 1fr;
+      width: 90%;
+      gap: 20px;
+      margin-top: 10%;
+   }
+
+   .container_items_box {
+      width: auto;
+      height: auto;
+   }
+
+   .container_items_box_header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .container_items_box_header h1 {
+      width: 80%;
+      font-size: 20px;
+      font-family: "metropolis";
+   }
+
+   .container_items_box_icon {
+      font-size: 45px;
+      background-color: #1eb2a6;
+      color: #fff;
+   }
+
+   .container_items_box_button button {
+      width: 200px;
+      height: 40px;
+   }
+
+   .price h1 {
+      font-size: 13px;
+      font-weight: 100;
+      color: #1eb2a6;
+   }
+
+}

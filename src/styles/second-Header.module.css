@@ -18,6 +18,10 @@
    align-items: center;
 }
 
+.menuIcon{
+   display: none;
+}
+
 .container_items_1 .link{
    text-decoration: none;
    margin-right: 20px;
@@ -51,5 +55,37 @@
 
  .container_items_1{
    display: none;
+ }
+ .container{
+   width: 90%;
+   margin-top: 5%;
+ }
+ .container_items{
+   grid-template-columns: 1fr 1fr;
+ }
+
+ .menuIcon{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: #a4c7cd;
+   color: #fff;
+ }
+ .menuIcon h1{
+   font-size: 17px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3.5px;
+   font-weight: 100;
+ }
+
+ .container_items_2 h1{
+   font-size: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 100;
+   letter-spacing: 0.5px;
  }
 }

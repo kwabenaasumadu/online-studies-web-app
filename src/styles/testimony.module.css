@@ -71,3 +71,29 @@
 .message p {
    font-size: 13px;
 }
+
+
+@media (max-width:700px){
+   .container{
+      margin-top: 20%;
+   }
+   .container_header span{
+      font-size: 16px;
+   }
+
+   .container_header h1{
+      font-size: 20px;
+   }
+
+   .container_items{
+      width: 90%;
+      grid-template-columns: 1fr;
+      gap: 20px;
+   }
+
+   .container_items_box{
+      width: auto;
+      height: auto;
+      padding: 5px;
+   }
+}
