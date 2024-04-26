@@ -4,7 +4,8 @@ import Benefits from "../comps/benefits";
 import Glance from "../comps/glance";
 import PopularCourses from "../comps/popular-courses";
 import Testimony from "../comps/testimony";
-import NewsLetter from '../comps/newsletter'
+import NewsLetter from "../comps/newsletter";
+import Footer from "../comps/footer";
 
 function Index() {
   return (
@@ -14,7 +15,8 @@ function Index() {
       <Glance />
       <PopularCourses />
       <Testimony />
-      <NewsLetter/>
+      <NewsLetter />
+      <Footer />
     </div>
   );
 }
