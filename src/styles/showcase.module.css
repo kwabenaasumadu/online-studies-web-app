@@ -133,6 +133,7 @@
 
 
 @media (max-width:700px) {
+ 
    .container_items {
       width: 90%;
       grid-template-columns: 1fr;
@@ -159,8 +160,8 @@
    }
 
    .container_items_2 .container_image {
-      width: 112%;
-      height: 112%;
+      width: 100%;
+      height: 100%;
       animation: pendulum 3s ease-in-out infinite alternate;
    }
 
