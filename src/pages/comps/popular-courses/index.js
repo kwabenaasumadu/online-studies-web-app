@@ -4,6 +4,7 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const [responsiveIsVisible, setResponsiveIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,19 @@ function Index() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 700) {
+        setResponsiveIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -29,7 +43,11 @@ function Index() {
         </div>
         {isVisible && (
           <div className={styles.container_items}>
-            <div className={styles.container_items_box}>
+            <div
+              className={`${styles.container_items_box} ${
+                responsiveIsVisible ? styles.container_items_box_responsive : ""
+              }`}
+            >
               <div className={styles.container_items_box_header}>
                 <LocalLibraryIcon className={styles.container_items_box_icon} />
                 <h1>Basics Fundamentals For Software Engineer</h1>

@@ -5,11 +5,26 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const [responsiveIsVisible, setResponsiveIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 23) {
         setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 60) {
+        setResponsiveIsVisible(true);
       }
     };
 
@@ -41,7 +56,13 @@ function Index() {
 
               {isVisible && (
                 <div>
-                  <div className={styles.container_items_2_box}>
+                  <div
+                    className={`${styles.container_items_2_box} ${
+                      responsiveIsVisible
+                        ? styles.container_items_2_box_responsive
+                        : ""
+                    }`}
+                  >
                     <div className={styles.logo_container}>
                       <MenuBookIcon className={styles.logo} />
                     </div>

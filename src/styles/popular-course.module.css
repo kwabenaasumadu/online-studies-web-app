@@ -180,4 +180,10 @@
       color: #1eb2a6;
    }
 
+   .container_items_box_responsive{
+      animation-name: slideDown;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+   }
+
 }
