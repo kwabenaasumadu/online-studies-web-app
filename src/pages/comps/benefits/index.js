@@ -28,7 +28,7 @@ function Index() {
             <Image
               src="/about.jpg"
               width={500}
-              height={500}
+              height={400}
               alt="benefits_img"
               className={styles.container_items_1_image}
             />

@@ -39,26 +39,28 @@
    align-items: center;
    justify-content: center;
 }
-.container_item_2_icon{
+
+.container_item_2_icon {
    margin-right: 10px;
    color: #ffffff;
 }
 
-.icon_1{
+.icon_1 {
    font-size: 50px;
    color: #ffffff;
 
 }
 
-.container_item_2_des{
+.container_item_2_des {
    width: 100%;
 }
 
-.container_item_2_des span{
+.container_item_2_des span {
    color: #ffffff;
    font-weight: 600;
 }
-.container_item_2_des h1{
+
+.container_item_2_des h1 {
    font-size: 20px;
    color: #ffffff;
    font-weight: 100;
@@ -68,41 +70,41 @@
 
 
 
-.container_item_3{
+.container_item_3 {
    display: flex;
    justify-content: flex-start;
    align-items: center;
 }
 
-.container_item_3_icon{
+.container_item_3_icon {
    width: 100%;
    color: #ffffff;
 }
 
-.container_item_3_icon .icon_2{
+.container_item_3_icon .icon_2 {
    font-size: 50px;
 }
 
-.container_item_3_des h1{
+.container_item_3_des h1 {
    font-size: 20px;
    color: #ffffff;
    font-weight: 100;
 }
 
-.container_item_3_des span{
-   color:#ffffff;
+.container_item_3_des span {
+   color: #ffffff;
    font-weight: 600;
 }
 
 
 
-.container_item_4{
+.container_item_4 {
    display: flex;
    justify-content: center;
    align-items: center;
 }
 
-.social_icons{
+.social_icons {
    margin-left: 20px;
    background-color: #f2f2f2f2;
    border-radius: 50%;
@@ -115,28 +117,57 @@
    animation-iteration-count: infinite;
 }
 
-.social_icons:hover{
+.social_icons:hover {
    background-color: green;
    color: #fff;
    transform: scaleX(1.05);
 }
 
 @keyframes changeColor {
-   0%, 20% {
-     background-color: #73819e;
-     color: #fff;
+
+   0%,
+   20% {
+      background-color: #73819e;
+      color: #fff;
    }
-   25%, 45% {
-     background-color: rgb(143, 173, 202);
-     color: #fff;
+
+   25%,
+   45% {
+      background-color: rgb(143, 173, 202);
+      color: #fff;
    }
-   50%, 70% {
-     background-color: #ba7683;
-     color: #fff;
+
+   50%,
+   70% {
+      background-color: #ba7683;
+      color: #fff;
    }
-   75%, 95% {
-     background-color: #8db39b;
-     color: #fff;
+
+   75%,
+   95% {
+      background-color: #8db39b;
+      color: #fff;
    }
- }
- 
+}
+
+
+
+@media (max-width: 700px) {
+
+   .container_item_2,
+   .container_item_3,
+   .container_item_4 {
+      display: none;
+   }
+
+   .container_items{
+      grid-template-columns: 1fr;
+   }
+
+   .container{
+      width: 90%;
+   }
+
+   .container_item_1{
+   }
+}

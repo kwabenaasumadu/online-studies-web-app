@@ -29,8 +29,8 @@ function Index() {
             <Image
               src="/11.png"
               alt="page_logo"
-              width={500}
-              height={500}
+              width={700}
+              height={700}
               className={styles.container_image}
             />
           </div>
