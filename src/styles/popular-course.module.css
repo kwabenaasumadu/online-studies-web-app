@@ -110,16 +110,12 @@
 @keyframes slideDown {
    0% {
       transform: translateY(-100%);
-      /* Start position above the viewport */
       opacity: 0;
-      /* Start with transparency */
    }
 
    100% {
       transform: translateY(0);
-      /* End position at the top */
       opacity: 1;
-      /* Fully visible */
    }
 }
 
@@ -182,7 +178,7 @@
 
    .container_items_box_responsive{
       animation-name: slideDown;
-      animation-duration: 3s;
+      animation-duration: 7s;
       animation-fill-mode: forwards;
    }
 
