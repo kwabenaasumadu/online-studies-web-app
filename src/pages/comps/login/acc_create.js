@@ -17,8 +17,8 @@ function Index() {
   const router = useRouter();
 
   const [user, setUser] = useState({
-    user_name: "",
-    user_password: "",
+    email: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -32,32 +32,34 @@ function Index() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    if (!user.email || !user.password) {
+      NotificationManager.error("Please fill in the user name and password");
+      return;
+    }
+
     setIsButtonClicked(true);
 
-    let data = {
-      email: user.user_name,
-      password: user.user_password,
-    };
-
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/create_user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(user),
       });
-
+      
       if (response.ok) {
-        setIsButtonClicked(false);
-        router.push("/")
+        // Registration successful
+        NotificationManager.success("Account created successfully");
+        router.push("/comps/login");
       } else {
-        NotificationManager.error("Login Failed");
-        setIsButtonClicked(false);
+        // Registration failed
+        const data = await response.json();
+        NotificationManager.error(data.error || "Registration failed");
       }
     } catch (error) {
-      NotificationManager.error("Error Occurred");
-      setIsButtonClicked(false);
+      console.error("Registration failed:", error);
+      NotificationManager.error("Registration failed. Please try again.");
     } finally {
       setIsButtonClicked(false);
     }
@@ -66,22 +68,20 @@ function Index() {
   return (
     <>
       {isButtonClicked && (
-        <>
-          <div className={styles.circle_container}>
-            <div className={styles.circle}></div>
-            <span>Please wait...</span>
-          </div>
-        </>
+        <div className={styles.circle_container}>
+          <div className={styles.circle}></div>
+          <span>Please wait...</span>
+        </div>
       )}
       <Head>
-        <title>Please Sign In</title>
+        <title>Create an Account</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={styles.container}>
         <div className={styles.container_items}>
           <div className={styles.container_login}>
-            <h2>Login to your account</h2>
+            <h2>Create an Account</h2>
           </div>
 
           <div className={styles.container_form}>
@@ -91,10 +91,10 @@ function Index() {
                 <input
                   type="text"
                   id="username"
-                  name="user_name"
-                  required
-                  value={user.user_name}
+                  name="email"
+                  value={user.email}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
 
@@ -103,10 +103,10 @@ function Index() {
                 <input
                   type={showPassword ? "text" : "password"}
                   id="password"
-                  name="user_password"
-                  required
-                  value={user.user_password}
+                  name="password"
+                  value={user.password}
                   onChange={handleInputChange}
+                  required
                 />
                 {showPassword ? (
                   <VisibilityOffOutlined
@@ -122,11 +122,11 @@ function Index() {
               </div>
 
               <div className={styles.container_forget_password}>
-                <Link href="/comps/login/acc_create">Create an account</Link>
+                <Link href="/comps/login">Login here</Link>
               </div>
 
               <button type="submit" className={styles.login_btn}>
-                Login
+                Create
               </button>
             </form>
           </div>

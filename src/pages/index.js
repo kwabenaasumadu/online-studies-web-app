@@ -4,9 +4,11 @@ import styles from "@/styles/Home.module.css";
 import Comps from "../pages/comps";
 import SupportIcon from "@mui/icons-material/SupportAgent";
 import CloseIcon from "@mui/icons-material/Close";
+import withSession from "@/lib/session";
 
-export default function Home() {
+export default function Home({ user }) {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -45,3 +47,20 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = withSession(async function ({ req, res }) {
+  const user = req.session.get("user");
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/comps/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      user: user,
+    },
+  };
+});

@@ -3,9 +3,36 @@ import styles from "../../../styles/second-Header.module.css";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import "react-notifications/lib/notifications.css";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
+import { useRouter } from "next/router";
 
 function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter()
+
+  const handleLogout = async (e) => {
+    try {
+      const response = await fetch("/api/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        NotificationManager.success("Logout Successful");
+        router.push('/')
+      } else {
+        NotificationManager.error("Logout Failed");
+      }
+    } catch (error) {
+      NotificationManager.error("Error Occurred");
+    }
+  };
 
   return (
     <>
@@ -44,8 +71,8 @@ function Index() {
             </Link>
           </div>
 
-          <div className={styles.container_items_2}>
-            <h1>GET certificate</h1>
+          <div className={styles.container_items_2} onClick={handleLogout}>
+            <h1>Logout</h1>
           </div>
         </div>
       </div>
@@ -97,6 +124,7 @@ function Index() {
           </div>
         </>
       )}
+      <NotificationContainer />
     </>
   );
 }
