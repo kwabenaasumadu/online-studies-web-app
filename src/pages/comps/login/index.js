@@ -7,6 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../../../firebase.config";
 
 function Index() {
   const [showPassword, setShowPassword] = useState(false);
@@ -60,6 +62,20 @@ function Index() {
       setIsButtonClicked(false);
     }
   };
+
+  
+  const resetPassword = async () => {
+   if(!email){
+      toast.error("Please enter your email address")
+   }
+   try {
+     await sendPasswordResetEmail(auth, email);
+     toast.success("Password reset email sent. Please check your email.");
+   } catch (error) {
+     toast.error("Error sending password reset email");
+   }
+ };
+
 
   return (
     <>
@@ -120,7 +136,8 @@ function Index() {
               </div>
 
               <div className={styles.container_forget_password}>
-                <Link href="/comps/login/acc_create">Create an account</Link>
+                <Link href="/comps/login/acc_create" className={styles.link}>Create account</Link>
+                <a onClick={resetPassword}>Forget Password</a>
               </div>
 
               <button type="submit" className={styles.login_btn}>
