@@ -3,11 +3,8 @@ import Head from "next/head";
 import styles from "../../../styles/login.module.css";
 import VisibilityOffOutlined from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import "react-notifications/lib/notifications.css";
-import {
-  NotificationContainer,
-  NotificationManager,
-} from "react-notifications";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -49,15 +46,15 @@ function Index() {
       });
 
       if (response.ok) {
-         NotificationManager.error("Login successful");
+         toast.success("Login successful");
         setIsButtonClicked(false);
         router.push("/")
       } else {
-        NotificationManager.error("Login Failed");
+        toast.error("Login Failed");
         setIsButtonClicked(false);
       }
     } catch (error) {
-      NotificationManager.error("Error Occurred");
+      toast.error("Error Occurred");
       setIsButtonClicked(false);
     } finally {
       setIsButtonClicked(false);
@@ -139,7 +136,7 @@ function Index() {
           </p>
         </div>
       </div>
-      <NotificationContainer />
+      <ToastContainer />
     </>
   );
 }

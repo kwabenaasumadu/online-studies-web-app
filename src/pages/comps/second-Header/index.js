@@ -3,11 +3,8 @@ import styles from "../../../styles/second-Header.module.css";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import "react-notifications/lib/notifications.css";
-import {
-  NotificationContainer,
-  NotificationManager,
-} from "react-notifications";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 
 function Index() {
@@ -24,13 +21,13 @@ function Index() {
       });
 
       if (response.ok) {
-        NotificationManager.success("Logout Successful");
+        toast.success("Logout Successful");
         router.push('/')
       } else {
-        NotificationManager.error("Logout Failed");
+        toast.error("Logout Failed");
       }
     } catch (error) {
-      NotificationManager.error("Error Occurred");
+      toast.error("Error Occurred");
     }
   };
 
@@ -124,7 +121,7 @@ function Index() {
           </div>
         </>
       )}
-      <NotificationContainer />
+      <ToastContainer />
     </>
   );
 }
