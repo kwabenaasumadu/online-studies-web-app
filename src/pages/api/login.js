@@ -16,7 +16,6 @@ export default withSession(async function handler(req, res) {
       const user = {
         id: userCredential.user.uid,
         email: userCredential.user.email,
-        // Add other user properties as needed
       };
 
       // Store user data in the session

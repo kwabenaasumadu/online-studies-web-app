@@ -49,6 +49,7 @@ function Index() {
       });
 
       if (response.ok) {
+         NotificationManager.error("Login successful");
         setIsButtonClicked(false);
         router.push("/")
       } else {
