@@ -6,8 +6,9 @@ import PopularCourses from "../comps/popular-courses";
 import Testimony from "../comps/testimony";
 import NewsLetter from "../comps/newsletter";
 import Footer from "../comps/footer";
+import withSession from "@/lib/session";
 
-function Index() {
+function Index({ user }) {
   return (
     <div>
       <Showcase />
@@ -22,3 +23,20 @@ function Index() {
 }
 
 export default Index;
+
+export const getServerSideProps = withSession(async function ({ req, res }) {
+  const user = req.session.get("user");
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/comps/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      user: user,
+    },
+  };
+});
