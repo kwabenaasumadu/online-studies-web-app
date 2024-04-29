@@ -67,11 +67,12 @@ function Index() {
                       <MenuBookIcon className={styles.logo} />
                     </div>
                     <div className={styles.container_items_2_box_details}>
-                      <h1>Online Courses</h1>
+                      <h1>Flexibility</h1>
                       <p>
-                        Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts.
+                        Learn at your own pace, anytime, and from anywhere. Cod
+                        E-learning allows you to fit learning into your busy
+                        schedule, whether that's during your daily commute,
+                        lunch break, or late at night
                       </p>
                     </div>
                   </div>
@@ -81,11 +82,11 @@ function Index() {
                       <MenuBookIcon className={styles.logo} />
                     </div>
                     <div className={styles.container_items_2_box_details}>
-                      <h1>Online Courses</h1>
+                      <h1>Accessibility</h1>
                       <p>
-                        Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts.
+                        Access courses from anywhere with an internet
+                        connection. Whether you're in a rural area or a bustling
+                        city, Cod E-learning brings education to your doorstep
                       </p>
                     </div>
                   </div>
@@ -95,11 +96,12 @@ function Index() {
                       <MenuBookIcon className={styles.logo} />
                     </div>
                     <div className={styles.container_items_2_box_details}>
-                      <h1>Online Courses</h1>
+                      <h1>Self-paced learning</h1>
                       <p>
-                        Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts.
+                        Review and accelerate your learning as needed. With Cod
+                        E-learning, you can revisit difficult topics or speed
+                        through familiar material, allowing you to learn more
+                        efficiently.
                       </p>
                     </div>
                   </div>
