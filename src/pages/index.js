@@ -5,10 +5,17 @@ import Comps from "../pages/comps";
 import SupportIcon from "@mui/icons-material/SupportAgent";
 import CloseIcon from "@mui/icons-material/Close";
 import withSession from "@/lib/session";
+import { useRouter } from "next/router";
 
 export default function Home({ user }) {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const router = useRouter();
 
+  const goToWhatsApp = () => {
+    const phoneNumber = "+233597063145";
+    const url = `whatsapp://send?phone=${phoneNumber}`;
+    window.location.href = url;
+  };
   return (
     <>
       <Head>
@@ -39,7 +46,7 @@ export default function Home({ user }) {
             </div>
             <div className={styles.container_header}>
               <h1>Have a Question?</h1>
-              <button>Chat with us</button>
+              <button onClick={goToWhatsApp}>Chat with us</button>
             </div>
           </div>
         </>
