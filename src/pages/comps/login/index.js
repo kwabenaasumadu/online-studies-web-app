@@ -17,8 +17,8 @@ function Index() {
   const router = useRouter();
 
   const [user, setUser] = useState({
-    user_name: "",
-    user_password: "",
+    email: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -35,8 +35,8 @@ function Index() {
     setIsButtonClicked(true);
 
     let data = {
-      email: user.user_name,
-      password: user.user_password,
+      email: user.email,
+      password: user.password,
     };
 
     try {
@@ -91,10 +91,10 @@ function Index() {
                 <label>Username</label>
                 <input
                   type="text"
-                  id="username"
-                  name="user_name"
+                  id="email"
+                  name="email"
                   required
-                  value={user.user_name}
+                  value={user.email}
                   onChange={handleInputChange}
                 />
               </div>
@@ -104,9 +104,9 @@ function Index() {
                 <input
                   type={showPassword ? "text" : "password"}
                   id="password"
-                  name="user_password"
+                  name="password"
                   required
-                  value={user.user_password}
+                  value={user.password}
                   onChange={handleInputChange}
                 />
                 {showPassword ? (
