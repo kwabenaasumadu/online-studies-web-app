@@ -8,7 +8,7 @@ import withSession from "@/lib/session";
 import { useRouter } from "next/router";
 
 export default function Home({ user }) {
-  const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const [isSupportOpen, setIsSupportOpen] = useState(true);
   const router = useRouter();
 
   const goToWhatsApp = () => {
