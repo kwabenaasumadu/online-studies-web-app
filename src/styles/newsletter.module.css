@@ -57,6 +57,7 @@
    border-radius: 10px;
    font-family: 'metropolis';
    font-weight: 500;
+   color: #000;
 }
 
 
@@ -96,6 +97,7 @@
 
    .container_items_2 button {
       padding: 15px;
+      color: #000;
    }
 
 }

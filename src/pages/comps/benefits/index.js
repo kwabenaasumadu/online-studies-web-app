@@ -23,7 +23,7 @@ function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 60) {
+      if (window.scrollY > 70) {
         setResponsiveIsVisible(true);
       }
     };
