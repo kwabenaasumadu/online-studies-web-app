@@ -71,7 +71,7 @@ function Index() {
                       <p>
                         Learn at your own pace, anytime, and from anywhere. Cod
                         E-learning allows you to fit learning into your busy
-                        schedule, whether that's during your daily commute,
+                        schedule, whether that&apos;s during your daily commute,
                         lunch break, or late at night
                       </p>
                     </div>
@@ -85,7 +85,7 @@ function Index() {
                       <h1>Accessibility</h1>
                       <p>
                         Access courses from anywhere with an internet
-                        connection. Whether you're in a rural area or a bustling
+                        connection. Whether you&apos;re in a rural area or a bustling
                         city, Cod E-learning brings education to your doorstep
                       </p>
                     </div>
