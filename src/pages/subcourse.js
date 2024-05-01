@@ -6,6 +6,7 @@ function Subcourse() {
   const [Course, setCourse] = useState("");
   const [courseBody, setCourseBody] = useState("");
   const [courseBodyTitle, setCourseBodyTitle] = useState("");
+  const [courseVideo, setCourseVideo] = useState("");
 
   const addAttendance = () => {
     const studentRef = ref(db, `/courses/-NwoT_elmZHLLyX3XQ5I/SubCourses`);
@@ -13,6 +14,7 @@ function Subcourse() {
       Course: Course,
       courseBody: courseBody,
       courseBodyTitle: courseBodyTitle,
+      courseVideo: courseVideo,
     };
 
     push(studentRef, newAttendance)
@@ -46,6 +48,13 @@ function Subcourse() {
         name="courseBodyTitle"
         onChange={(e) => setCourseBodyTitle(e.target.value)}
       />
+
+      <input
+        value={courseVideo}
+        placeholder="Course video"
+        name="courseBodyTitle"
+        onChange={(e) => setCourseVideo(e.target.value)}
+      />
       <button type="submit" onClick={addAttendance}>
         Submit
       </button>
@@ -54,3 +63,4 @@ function Subcourse() {
 }
 
 export default Subcourse;
+<iframe width="424" height="238" src="https://www.youtube.com/embed/OFnSYVVg8-k" title="How To Be Successful In This Coding Journey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

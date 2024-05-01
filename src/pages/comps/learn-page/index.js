@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./../../../styles/learn-page.module.css";
 import { useRouter } from "next/router";
+import ReactPlayer from "react-player";
 
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
@@ -15,7 +16,6 @@ function Index() {
     }
   }, [parsedCourseData]);
 
-
   const handleCourseClick = (courseKey) => {
     setSelectedCourse(courseKey);
   };
@@ -29,7 +29,9 @@ function Index() {
 
         <div className={styles.container_nav}>
           {Object.entries(courseInfo?.SubCourses || {}).map(([key, value]) => (
-            <h1 key={key} onClick={() => handleCourseClick(key)}>Course {value.Course}</h1>
+            <h1 key={key} onClick={() => handleCourseClick(key)}>
+              Course {value.Course}
+            </h1>
           ))}
         </div>
 
@@ -41,9 +43,17 @@ function Index() {
               </div>
 
               <div className={styles.container_content_body_video}>
-            <video controls></video>
-          </div>
-          
+                <iframe
+                  width="424"
+                  height="540"
+                  src={`${courseInfo?.SubCourses[selectedCourse].courseVideo}`}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
               <div className={styles.container_content_body}>
                 <p>{courseInfo?.SubCourses[selectedCourse].courseBody}</p>
               </div>
