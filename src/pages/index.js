@@ -65,6 +65,11 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     };
   }
+
+  if (user) {
+    req.session.set("user", user);
+    await req.session.save();
+  }
   return {
     props: {
       user: user,

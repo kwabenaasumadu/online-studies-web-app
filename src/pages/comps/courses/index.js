@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Layout from "@/pages/layout";
 import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
+import withSession from "@/lib/session";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -111,3 +112,25 @@ function Index() {
 }
 
 export default Index;
+
+export const getServerSideProps = withSession(async function ({ req, res }) {
+  const user = req.session.get("user");
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/comps/login",
+        permanent: false,
+      },
+    };
+  }
+
+  if (user) {
+    req.session.set("user", user);
+    await req.session.save();
+  }
+  return {
+    props: {
+      user: user,
+    },
+  };
+});

@@ -3,6 +3,10 @@ import styles from "../../../styles/feedback.module.css";
 import { db } from "@/pages/api/firebase";
 import { ref, push } from "firebase/database";
 import Layout from "@/pages/layout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/router";
+import withSession from "@/lib/session";
 
 function Index() {
   const [formData, setFormData] = useState({
@@ -10,15 +14,20 @@ function Index() {
     LearnerMessage: "",
   });
 
+  const router = useRouter()
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const newStudentRef = push(ref(db, "testimony"), formData);
       const newStudentKey = newStudentRef.key;
+      toast.success("Feedback Submitted");
+      router.push("/comps/")
       return newStudentKey;
     } catch (error) {
       console.error("Error submitting Student:");
+      toast.success("Error Occured");
     }
   };
 
@@ -68,8 +77,32 @@ function Index() {
           </div>
         </div>
       </Layout>
+      <ToastContainer/>
     </>
   );
 }
 
 export default Index;
+
+export const getServerSideProps = withSession(async function ({ req, res }) {
+   const user = req.session.get("user");
+   if (!user) {
+     return {
+       redirect: {
+         destination: "/comps/login",
+         permanent: false,
+       },
+     };
+   }
+ 
+   if (user) {
+     req.session.set("user", user);
+     await req.session.save();
+   }
+   return {
+     props: {
+       user: user,
+     },
+   };
+ });
+ 

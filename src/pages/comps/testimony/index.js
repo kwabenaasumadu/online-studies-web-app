@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "../../../styles/testimony.module.css";
 import { auth, db } from "@/pages/api/firebase";
 import { ref, get } from "firebase/database";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
