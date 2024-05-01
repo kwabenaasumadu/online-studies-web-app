@@ -65,8 +65,8 @@ function Index() {
     };
   }, []);
 
-  function gotoIntroduction() {
-    router.push("/comps/learn-page/");
+  function gotoAllCourses() {
+    router.push("/comps/courses/");
   }
 
   return (
@@ -102,7 +102,7 @@ function Index() {
                 </div>
 
                 <div className={styles.container_items_box_button}>
-                  <button onClick={gotoIntroduction}>Enroll Now!</button>
+                  <button onClick={gotoAllCourses}>Learn Now!</button>
                 </div>
               </div>
             ))}

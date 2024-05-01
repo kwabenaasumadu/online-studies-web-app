@@ -10,7 +10,6 @@ function Index() {
     <>
       <div className={styles.container}>
         <div className={styles.container_items}>
-
           <div className={styles.container_items_1}>
             <div className={styles.container_items_1_header}>
               <h1>COD E-LEARNING</h1>
@@ -19,8 +18,10 @@ function Index() {
 
             <div className={styles.container_items_1_des}>
               <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+                Embark on your learning journey with the courage to explore new
+                horizons, execute your newfound knowledge with unwavering
+                obedience to the task at hand, and practice diligently with
+                discipline to refine your skills and achieve mastery.
               </p>
             </div>
 
@@ -31,10 +32,8 @@ function Index() {
             </div>
           </div>
 
-        
-
           <div className={styles.container_items_2_des}>
-          <div className={styles.container_items_2_header}>
+            <div className={styles.container_items_2_header}>
               <h1>Quick Links</h1>
             </div>
             <Link href="/" className={styles.link}>
@@ -56,7 +55,6 @@ function Index() {
             </Link>
           </div>
 
-       
           <div className={styles.container_items_4}>
             <div className={styles.container_items_4_header}>
               <h1>Have a Questions?</h1>

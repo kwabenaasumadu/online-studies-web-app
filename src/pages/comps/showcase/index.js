@@ -15,8 +15,10 @@ function Index() {
             <span>welcome to cod e-learning</span>
             <h1>Best Online education expertise</h1>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              Embark on your learning journey with the courage to explore new
+              horizons, execute your newfound knowledge with unwavering
+              obedience to the task at hand, and practice diligently with
+              discipline to refine your skills and achieve mastery.
             </p>
 
             <div className={styles.container_btn}>
