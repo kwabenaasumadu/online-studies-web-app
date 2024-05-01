@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleLogout = async (e) => {
     try {
@@ -22,7 +22,7 @@ function Index() {
 
       if (response.ok) {
         toast.success("Logout Successful");
-        router.push('/')
+        router.push("/");
       } else {
         toast.error("Logout Failed");
       }
@@ -105,8 +105,8 @@ function Index() {
                 Pricing
               </Link>
 
-              <Link href="/" className={styles.link}>
-                Journal
+              <Link href="/comps/feedback" className={styles.link}>
+                Feedback
               </Link>
 
               <Link href="/" className={styles.link}>
