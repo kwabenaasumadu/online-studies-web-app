@@ -1,9 +1,36 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../styles/testimony.module.css";
-
+import { auth, db } from "@/pages/api/firebase";
+import { ref, get } from "firebase/database";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const [testimonyData, setTestimonyData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const dbRef = ref(db, "testimony");
+        const response = await get(dbRef);
+        const data = response.val();
+
+        if (data && typeof data === "object") {
+          const dataArray = Object.entries(data).map(([key, value]) => ({
+            key,
+            ...value,
+          }));
+          setTestimonyData(dataArray);
+        } else {
+          setTestimonyData([]);
+        }
+      } catch (error) {
+        console.error("Error fetching data:");
+        setTestimonyData([]);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,69 +54,20 @@ function Index() {
           <h1>Our Successful Students</h1>
         </div>
 
-
         {isVisible && (
           <div className={styles.container_items}>
-            <div className={styles.container_items_box}>
-              <div className={styles.message}>
-                <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts.Far far away, behind the word
-                </p>
+            {testimonyData.map((data) => (
+              <div className={styles.container_items_box} key={data.key}>
+                <div className={styles.message}>
+                  <p>
+                    {data?.LearnerMessage}
+                  </p>
+                </div>
+                <div className={styles.header}>
+                  <h1>{data?.LearnerName}</h1>
+                </div>
               </div>
-              <div className={styles.header}>
-                <h1>Kwabena Asumadu</h1>
-              </div>
-            </div>
-            <div className={styles.container_items_box}>
-              <div className={styles.message}>
-                <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts.Far far away, behind the word
-                </p>
-              </div>
-              <div className={styles.header}>
-                <h1>Abena</h1>
-              </div>
-            </div>
-            <div className={styles.container_items_box}>
-              <div className={styles.message}>
-                <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts.Far far away, behind the word
-                </p>
-              </div>
-              <div className={styles.header}>
-                <h1>Emmanuel Frimpong</h1>
-              </div>
-            </div>
-            <div className={styles.container_items_box}>
-              <div className={styles.message}>
-                <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts.Far far away, behind the word
-                </p>
-              </div>
-              <div className={styles.header}>
-                <h1>Alexander Amankwaah</h1>
-              </div>
-            </div>
-            <div className={styles.container_items_box}>
-              <div className={styles.message}>
-                <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts.Far far away, behind the word
-                </p>
-              </div>
-              <div className={styles.header}>
-                <h1>Kofi Adom</h1>
-              </div>
-            </div>
+            ))}
           </div>
         )}
       </div>

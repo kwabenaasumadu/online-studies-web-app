@@ -59,8 +59,8 @@ function Index() {
               Pricing
             </Link>
 
-            <Link href="/" className={styles.link}>
-              Journal
+            <Link href="/comps/feedback" className={styles.link}>
+              Feedback
             </Link>
 
             <Link href="/" className={styles.link}>
