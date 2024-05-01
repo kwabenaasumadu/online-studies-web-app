@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../../../firebase.config";
+import { auth } from "../../../lib/firebase";
 
 function Index() {
   const [showPassword, setShowPassword] = useState(false);

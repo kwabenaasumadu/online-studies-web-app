@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase.config";
+import { auth } from "../../lib/firebase";
 
 export default async function handler(req, res) {
   const { email, password } = req.body;
