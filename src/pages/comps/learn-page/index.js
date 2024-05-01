@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./../../../styles/learn-page.module.css";
 import { useRouter } from "next/router";
-import ReactPlayer from "react-player";
+import withSession from "@/lib/session";
 
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
@@ -66,3 +66,26 @@ function Index() {
 }
 
 export default Index;
+
+
+export const getServerSideProps = withSession(async function ({ req, res }) {
+  const user = req.session.get("user");
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/comps/login",
+        permanent: false,
+      },
+    };
+  }
+
+  if (user) {
+    req.session.set("user", user);
+    await req.session.save();
+  }
+  return {
+    props: {
+      user: user,
+    },
+  };
+});
