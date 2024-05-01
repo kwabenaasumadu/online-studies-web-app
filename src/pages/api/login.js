@@ -1,10 +1,11 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase";
 import withSession from "@/lib/session";
+import { auth } from "./firebase";
 
 export default withSession(async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
+   
 
     try {
       const userCredential = await signInWithEmailAndPassword(
