@@ -1,5 +1,5 @@
 import withSession from "@/lib/session";
-import { auth } from "../../lib/firebase";
+import { auth } from "./firebase";
 
 export default withSession(async function handler(req, res) {
   if (req.method === 'POST') {

@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../lib/firebase";
+import { auth } from "./firebase";
 import withSession from "@/lib/session";
 
 export default withSession(async function handler(req, res) {
