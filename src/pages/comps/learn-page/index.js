@@ -48,7 +48,7 @@ function Index() {
                   height="540"
                   src={`${courseInfo?.SubCourses[selectedCourse].courseVideo}`}
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen
                 ></iframe>
@@ -66,7 +66,6 @@ function Index() {
 }
 
 export default Index;
-
 
 export const getServerSideProps = withSession(async function ({ req, res }) {
   const user = req.session.get("user");
