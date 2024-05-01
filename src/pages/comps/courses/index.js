@@ -12,7 +12,6 @@ function Index() {
   const [responsiveIsVisible, setResponsiveIsVisible] = useState(false);
   const [courseData, setCourseData] = useState([]);
   const router = useRouter();
-  console.log(courseData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,8 +66,11 @@ function Index() {
     };
   }, []);
 
-  function gotoIntroduction() {
-    router.push("/comps/learn-page");
+  function goToCourse(courseData){
+    router.push({
+      pathname: "/comps/learn-page",
+      query: {courseData: JSON.stringify(courseData)},
+    });
   }
 
   return (
@@ -98,7 +100,7 @@ function Index() {
                 </div>
 
                 <div className={styles.container_items_box_button}>
-                  <button onClick={gotoIntroduction}>
+                  <button onClick={()=> goToCourse(course)}>
                     Enroll Now!
                   </button>
                 </div>

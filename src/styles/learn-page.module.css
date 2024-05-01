@@ -14,6 +14,7 @@
 .container_header h1 {
    font-size: 25x;
    font-family: 'metropolis';
+   text-align: center;
 }
 
 .container_nav {
