@@ -43,7 +43,7 @@ function Index() {
             <Link href="/" className={styles.link}>
               Home
             </Link>
-            <Link href="/" className={styles.link}>
+            <Link href="/comps/courses" className={styles.link}>
               All Courses
             </Link>
 
@@ -89,7 +89,7 @@ function Index() {
               <Link href="/" className={styles.link}>
                 Home
               </Link>
-              <Link href="/" className={styles.link}>
+              <Link href="/comps/courses" className={styles.link}>
                 All Courses
               </Link>
 

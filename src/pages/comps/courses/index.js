@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../../styles/popular-course.module.css";
+import styles from "../../../styles/courses.module.css";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import Layout from "@/pages/layout";
 import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
 
@@ -11,6 +11,7 @@ function Index() {
   const [responsiveIsVisible, setResponsiveIsVisible] = useState(false);
   const [courseData, setCourseData] = useState([]);
   const router = useRouter();
+  console.log(courseData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +40,7 @@ function Index() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 250) {
+      if (window.scrollY > 0) {
         setIsVisible(true);
       }
     };
@@ -71,22 +72,16 @@ function Index() {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.container_header}>
-          <span>Our courses</span>
-          <h1>Explore Our Popular Online Courses</h1>
-        </div>
-        {isVisible && (
+      <Layout>
+        <div className={styles.container}>
+          <div className={styles.container_header}>
+            <span>Our courses</span>
+            <h1>Explore Online Courses</h1>
+          </div>
+
           <div className={styles.container_items}>
             {courseData.map((course) => (
-              <div
-                className={`${styles.container_items_box} ${
-                  responsiveIsVisible
-                    ? styles.container_items_box_responsive
-                    : ""
-                }`}
-                key={course.key}
-              >
+              <div className={styles.container_items_box} key={course.key}>
                 <div className={styles.container_items_box_header}>
                   <LocalLibraryIcon
                     className={styles.container_items_box_icon}
@@ -102,19 +97,15 @@ function Index() {
                 </div>
 
                 <div className={styles.container_items_box_button}>
-                  <button onClick={gotoIntroduction}>Enroll Now!</button>
+                  <button onClick={() => router.push(course.link)}>
+                    Enroll Now!
+                  </button>
                 </div>
               </div>
             ))}
           </div>
-        )}
-
-        <div className={styles.container_button}>
-          <Link href="/comps/courses" className={styles.link}>
-            View All
-          </Link>
         </div>
-      </div>
+      </Layout>
     </>
   );
 }

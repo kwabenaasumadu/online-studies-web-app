@@ -30,13 +30,14 @@
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    width: 70%;
+   gap: 20px;
    margin: 2.5% auto;
 }
 
 .container_items_box {
    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-   height: 300px;
-   width: 400px;
+   height: 100%;
+   width: 100%;
    padding: 10px;
    border-radius: 5px;
    animation-name: slideDown;
@@ -138,7 +139,7 @@
 
 @media (max-width:700px) {
    .container {
-      margin-top: 20%;
+      margin-top: 10%;
    }
 
    .container_header span {
@@ -159,8 +160,9 @@
    }
 
    .container_items_box {
-      width: auto;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
    }
 
    .container_items_box_header {
@@ -170,8 +172,8 @@
    }
 
    .container_items_box_header h1 {
-      width: 80%;
-      font-size: 20px;
+      width: 70%;
+      font-size: 18px;
       font-family: "metropolis";
    }
 
@@ -185,6 +187,7 @@
       width: 200px;
       height: 40px;
    }
+
 
    .price h1 {
       font-size: 13px;
