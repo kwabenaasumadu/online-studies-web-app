@@ -14,7 +14,7 @@ function Index() {
     if (parsedCourseData) {
       setCourseInfo(parsedCourseData);
     }
-  }, [parsedCourseData]);
+  }, []);
 
   const handleCourseClick = (courseKey) => {
     setSelectedCourse(courseKey);
