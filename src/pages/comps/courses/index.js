@@ -68,7 +68,7 @@ function Index() {
   }, []);
 
   function gotoIntroduction() {
-    router.push("/comps/courses/introduction-computer-science");
+    router.push("/comps/learn-page");
   }
 
   return (
@@ -98,7 +98,7 @@ function Index() {
                 </div>
 
                 <div className={styles.container_items_box_button}>
-                  <button onClick={() => router.push(course.link)}>
+                  <button onClick={gotoIntroduction}>
                     Enroll Now!
                   </button>
                 </div>
