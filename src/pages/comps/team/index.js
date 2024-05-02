@@ -21,12 +21,7 @@ function Index() {
                 alt="ceo_image"
                 className={styles.image}
               />
-              
             </div>
-
-          
-
-
           </div>
         </div>
       </Layout>
