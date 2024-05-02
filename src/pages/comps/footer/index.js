@@ -42,8 +42,8 @@ function Index() {
             <Link href="/" className={styles.link}>
               Services
             </Link>
-            <Link href="/" className={styles.link}>
-              Courses
+            <Link href="/comps/courses" className={styles.link}>
+              All Courses
             </Link>
 
             <Link href="/" className={styles.link}>
@@ -61,7 +61,7 @@ function Index() {
             </div>
 
             <div className={styles.container_items_4_des}>
-              <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <p>Kumasi, Ghana</p>
               <p>+23359703145</p>
               <p>ksakyiasumadu@gmail.com</p>
             </div>
