@@ -63,4 +63,3 @@ function Subcourse() {
 }
 
 export default Subcourse;
-<iframe width="424" height="238" src="https://www.youtube.com/embed/OFnSYVVg8-k" title="How To Be Successful In This Coding Journey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
