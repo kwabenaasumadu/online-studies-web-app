@@ -3,8 +3,17 @@ import styles from "../../../styles/showcase.module.css";
 import Image from "next/image";
 import FirstHeader from "../first-Header";
 import SecondHeader from "../second-Header";
+import { useRouter } from "next/router";
 
 function Index() {
+  const router = useRouter()
+
+  const goToWhatsApp = () => {
+    const phoneNumber = "+233597063145";
+    const url = `whatsapp://send?phone=${phoneNumber}`;
+    window.location.href = url;
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -22,8 +31,8 @@ function Index() {
             </p>
 
             <div className={styles.container_btn}>
-              <button>Get started now</button>
-              <button>view course</button>
+              <button onClick={goToWhatsApp}>Contact us</button>
+              <button onClick={() => router.push("comps/courses")}>get started now</button>
             </div>
           </div>
 

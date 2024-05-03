@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./../../../styles/learn-page.module.css";
 import { useRouter } from "next/router";
 import withSession from "@/lib/session";
+import Head from "next/head";
 
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
@@ -22,6 +23,9 @@ function Index() {
 
   return (
     <>
+    <Head>
+      <title>{courseInfo?.CourseTitle}</title>
+    </Head>
       <div className={styles.container}>
         <div className={styles.container_header}>
           <h1>{`Welcome ${courseInfo?.CourseTitle}`}</h1>

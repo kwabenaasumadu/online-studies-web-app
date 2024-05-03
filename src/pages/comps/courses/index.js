@@ -6,6 +6,7 @@ import Layout from "@/pages/layout";
 import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
 import withSession from "@/lib/session";
+import Head from "next/head";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -75,6 +76,9 @@ function Index() {
 
   return (
     <>
+    <Head>
+      <title>Browse all courses</title>
+    </Head>
       <Layout>
         <div className={styles.container}>
           <div className={styles.container_header}>
