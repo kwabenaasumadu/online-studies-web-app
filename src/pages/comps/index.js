@@ -6,6 +6,7 @@ import PopularCourses from "../comps/popular-courses";
 import Testimony from "../comps/testimony";
 import NewsLetter from "../comps/newsletter";
 import Footer from "../comps/footer";
+import Blog from '../comps/our-blog'
 import withSession from "@/lib/session";
 
 function Index({ user }) {
@@ -16,6 +17,7 @@ function Index({ user }) {
       <Glance />
       <PopularCourses />
       <Testimony />
+      <Blog/>
       <NewsLetter />
       <Footer />
     </div>
