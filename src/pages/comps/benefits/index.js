@@ -41,7 +41,7 @@ function Index() {
         <div className={styles.container_items}>
           <div className={styles.container_items_1}>
             <Image
-              src="/about.jpg"
+              src="/showcase.png"
               width={500}
               height={400}
               alt="benefits_img"

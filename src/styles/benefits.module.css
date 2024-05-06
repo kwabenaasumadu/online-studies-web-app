@@ -101,13 +101,11 @@
 
 @media (max-width:700px) {
    .container_items {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
       width: 90%;
    }
 
-   .container_items_1_image {
-      display: none;
-   }
+ 
 
    .container_items_2 h1 {
       font-size: 20px;

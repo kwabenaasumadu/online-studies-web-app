@@ -7,13 +7,16 @@ import Head from "next/head";
 function Index() {
   const [courseInfo, setCourseInfo] = useState({});
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter();
   const { courseData } = router.query;
   const parsedCourseData = courseData ? JSON.parse(courseData) : null;
 
   useEffect(() => {
+    setIsLoading(true)
     if (parsedCourseData) {
       setCourseInfo(parsedCourseData);
+      setIsLoading(false)
     }
   }, []);
 
@@ -23,6 +26,14 @@ function Index() {
 
   return (
     <>
+      {isLoading && (
+        <>
+          <div className={styles.circle_container}>
+            <div className={styles.circle}></div>
+            <span>Loading...</span>
+          </div>
+        </>
+      )}
     <Head>
       <title>{courseInfo?.CourseTitle}</title>
     </Head>
@@ -50,7 +61,7 @@ function Index() {
                 <iframe
                   width="424"
                   height="540"
-                  src={`${courseInfo?.SubCourses[selectedCourse].courseVideo}`}
+                  src={`${courseInfo?.SubCourses[selectedCourse]?.courseVideo || "Loading..."}`}
                   frameborder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
