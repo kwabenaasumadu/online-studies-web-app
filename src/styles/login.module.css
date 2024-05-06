@@ -185,9 +185,11 @@
    .container_form_input input {
       height: 40px;
    }
+   
    .footer_container p {
       color: #000;
       font-size: 15px;
+      margin-bottom: 7%;
    }
 
    .container_form button{
