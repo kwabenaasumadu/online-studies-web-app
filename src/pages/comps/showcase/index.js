@@ -27,7 +27,7 @@ function Index() {
               Embark on your learning journey with the courage to explore new
               horizons, execute your newfound knowledge with unwavering
               obedience to the task at hand, and practice diligently with
-              discipline to refine your skills and achieve mastery.
+              discipline to refine your skills and achieve mastery
             </p>
 
             <div className={styles.container_btn}>
