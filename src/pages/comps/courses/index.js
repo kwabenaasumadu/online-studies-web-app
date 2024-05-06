@@ -3,6 +3,8 @@ import styles from "../../../styles/courses.module.css";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import { useRouter } from "next/router";
 import Layout from "@/pages/layout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
 import withSession from "@/lib/session";
@@ -12,9 +14,16 @@ function Index() {
   const [isVisible, setIsVisible] = useState(false);
   const [responsiveIsVisible, setResponsiveIsVisible] = useState(false);
   const [courseData, setCourseData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
 
+  useEffect(()=>{
+
+  })
+
   useEffect(() => {
+    setIsLoading(true)
     const fetchData = async () => {
       try {
         const dbRef = ref(db, "courses");
@@ -27,10 +36,12 @@ function Index() {
             ...value,
           }));
           setCourseData(dataArray);
+          setIsLoading(false);
         } else {
           setCourseData([]);
         }
       } catch (error) {
+        toast.error("Error fetching Courses")
         console.error("Error fetching data:");
         setCourseData([]);
       }
@@ -76,6 +87,14 @@ function Index() {
 
   return (
     <>
+      {isLoading && (
+        <>
+          <div className={styles.circle_container}>
+            <div className={styles.circle}></div>
+            <span>Loading...</span>
+          </div>
+        </>
+      )}
     <Head>
       <title>Browse all courses</title>
     </Head>
@@ -113,6 +132,7 @@ function Index() {
           </div>
         </div>
       </Layout>
+      <ToastContainer/>
     </>
   );
 }

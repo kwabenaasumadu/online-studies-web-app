@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { ref, get } from "firebase/database";
 import { auth, db } from "@/pages/api/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,6 +33,7 @@ function Index() {
       } catch (error) {
         console.error("Error fetching data:");
         setCourseData([]);
+        toast.error("Error fetching Courses")
       }
     };
 
@@ -71,6 +74,7 @@ function Index() {
 
   return (
     <>
+  
       <div className={styles.container}>
         <div className={styles.container_header}>
           <span>Our courses</span>
@@ -115,6 +119,7 @@ function Index() {
           </Link>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 }
