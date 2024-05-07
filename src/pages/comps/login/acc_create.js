@@ -86,7 +86,7 @@ function Index() {
           <div className={styles.container_form}>
             <form onSubmit={handleFormSubmit}>
               <div className={styles.container_form_input}>
-                <label>Username</label>
+                <label>Email</label>
                 <input
                   type="text"
                   id="username"
