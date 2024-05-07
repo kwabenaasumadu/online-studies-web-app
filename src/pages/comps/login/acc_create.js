@@ -49,9 +49,8 @@ function Index() {
       });
       
       if (response.ok) {
-        // Registration successful
         NotificationManager.success("Account created successfully");
-        router.push("/comps/login");
+        router.push("/comps/");
       } else {
         // Registration failed
         const data = await response.json();
