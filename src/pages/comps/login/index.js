@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../api/firebase";
 
+
 function Index() {
   const [showPassword, setShowPassword] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
