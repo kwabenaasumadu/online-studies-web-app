@@ -45,7 +45,11 @@ export default function Home({ user }) {
               <CloseIcon className={styles.icon} />
             </div>
             <div className={styles.container_header}>
-              <h1>Have a Question?</h1>
+              <h1>
+                Are you interested in building a career in tech? Do you want to
+                learn web development and software development skills to create
+                dynamic web applications?
+              </h1>
               <button onClick={goToWhatsApp}>Chat with us</button>
             </div>
           </div>

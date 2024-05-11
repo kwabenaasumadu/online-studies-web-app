@@ -15,7 +15,7 @@ function Index() {
             <SchoolIcon className={styles.icon} />
 
             <div className={styles.container_items_1_des}>
-              <h1>3,000</h1>
+              <h1>90</h1>
               <p>success stories</p>
             </div>
           </div>
@@ -24,7 +24,7 @@ function Index() {
             <EmojiPeopleIcon className={styles.icon} />
 
             <div className={styles.container_items_1_des}>
-              <h1>201</h1>
+              <h1>2</h1>
               <p>Trusted Tutors</p>
             </div>
           </div>
@@ -42,7 +42,7 @@ function Index() {
             <LocalLibraryIcon className={styles.icon} />
 
             <div className={styles.container_items_1_des}>
-              <h1>765</h1>
+              <h1>3</h1>
               <p>courses</p>
             </div>
           </div>

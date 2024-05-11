@@ -51,7 +51,7 @@ function Index() {
               About
             </Link>
 
-            <Link href="/comps/team" className={styles.link}>
+            <Link href="/" className={styles.link}>
               Team
             </Link>
 
@@ -93,7 +93,7 @@ function Index() {
                 About
               </Link>
 
-              <Link href="/comps/team" className={styles.link}>
+              <Link href="/" className={styles.link}>
                 Team
               </Link>
 
