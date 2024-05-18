@@ -10,7 +10,7 @@
 .container_items {
    width: 30%;
    height: 100%;
-   box-shadow: 0px 0px 10px #1eb2a6;
+   box-shadow: 0px 0px 10px #008374;
    margin-top: 10%;
    border-radius: 10px;
 }
@@ -51,10 +51,10 @@
    width: 100%;
    height: 45px;
    border-radius: 5px;
-   border: 1px solid #230035;
+   border: 1px solid #000;
    display: flex;
    padding-left: 10px;
-   color: #230035;
+   color: #000;
    font-family: 'metropolis';
    font-weight: 600;
    letter-spacing: 0.5px;
@@ -73,7 +73,7 @@
 }
 
 .container_forget_password a{
-   color: #FF176C;
+   color: #f85a40;
    text-decoration: none;
    font-family: 'metropolis';
    font-size: 18px;
@@ -82,7 +82,7 @@
 .container_form button{
    width: 100%;
    height: 45px;
-   background-color: #1eb2a6;
+   background-color: #008374;
    color: #fff;
    font-family: 'metropolis';
    font-size: 20px;
@@ -158,7 +158,7 @@
  .circle_container span {
    margin-left: 10px;
    font-size: 20px;
-   color: #BE71F4;
+   color: #f85a40;
    font-family: 'metropolis';
  }
  

@@ -6,6 +6,8 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import Image from "next/image";
+import LogoImage from '../../../../public/logo-2.png'
 
 function Index() {
   return (
@@ -13,7 +15,13 @@ function Index() {
       <div className={styles.container}>
         <div className={styles.container_items}>
           <div className={styles.container_item_1}>
-            <h1>Cod E-learning</h1>
+            <Image
+              src={LogoImage}
+              width={180}
+              height={180}
+              alt="cod_innovation"
+              className={styles.logo}
+            />{" "}
             <span>Online education & learning</span>
           </div>
 

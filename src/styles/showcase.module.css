@@ -1,5 +1,5 @@
 .container {
-   background-color: #a4c7cd;
+   background-color: #00796b;
    width: 100%;
    height: 100vh;
 }
@@ -25,18 +25,20 @@
    text-transform: uppercase;
    color: #f2f2f2;
    margin-bottom: 7px;
+   font-family: serif;
 }
 
 .container_items_1 h1 {
    font-size: 40px;
-   width: 60%;
+   width:65%;
    color: #fff;
+   font-family: serif;
 }
 
 .container_items_1 p {
    color: #f2f2f2;
    width: 90%;
-   font-family: 'metropolis';
+   font-family: serif;
    margin-top: 3%;
 }
 
@@ -68,7 +70,7 @@
    margin-right: 3%;
    font-weight: 600;
    text-transform: uppercase;
-   font-family: 'metropolis';
+   font-family: serif;
 }
 
 .container_btn button:nth-child(2) {
