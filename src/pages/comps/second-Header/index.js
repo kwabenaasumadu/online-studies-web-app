@@ -51,10 +51,6 @@ function Index() {
               About
             </Link>
 
-            <Link href="/" className={styles.link}>
-              Team
-            </Link>
-
             <Link href="/comps/feedback" className={styles.link}>
               Feedback
             </Link>
@@ -91,10 +87,6 @@ function Index() {
 
               <Link href="/" className={styles.link}>
                 About
-              </Link>
-
-              <Link href="/" className={styles.link}>
-                Team
               </Link>
 
               <Link href="/comps/feedback" className={styles.link}>

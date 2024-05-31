@@ -39,9 +39,7 @@ function Index() {
             <Link href="/" className={styles.link}>
               About Us
             </Link>
-            <Link href="/" className={styles.link}>
-              Services
-            </Link>
+        
             <Link href="/comps/courses" className={styles.link}>
               All Courses
             </Link>
