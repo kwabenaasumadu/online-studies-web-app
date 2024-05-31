@@ -1,11 +1,41 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "../../../styles/glance.module.css";
 import SchoolIcon from "@mui/icons-material/School";
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import { ref, get } from "firebase/database";
+import { auth, db } from "@/pages/api/firebase";
 
 function Index() {
+  const [courseData, setCourseData] = useState([]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const dbRef = ref(db, "courses");
+        const response = await get(dbRef);
+        const data = response.val();
+
+        if (data && typeof data === "object") {
+          const dataArray = Object.entries(data).map(([key, value]) => ({
+            key,
+            ...value,
+          }));
+          setCourseData(dataArray);
+        } else {
+          setCourseData([]);
+        }
+      } catch (error) {
+        console.error("Error fetching data:");
+        setCourseData([]);
+        toast.error("Error fetching Courses")
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <div className={styles.container}>
@@ -42,7 +72,7 @@ function Index() {
             <LocalLibraryIcon className={styles.icon} />
 
             <div className={styles.container_items_1_des}>
-              <h1>3</h1>
+              <h1>{courseData?.length}</h1>
               <p>courses</p>
             </div>
           </div>

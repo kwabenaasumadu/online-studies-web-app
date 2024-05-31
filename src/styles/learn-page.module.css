@@ -12,8 +12,8 @@
 }
 
 .container_header h1 {
-   font-size: 25x;
-   font-family: 'metropolis';
+   font-size: 25px;
+   font-family: serif;
    text-align: center;
 }
 
@@ -27,7 +27,7 @@
    margin: 0 auto;
    overflow-x: scroll;
    scrollbar-width: thin;
-   background-color: #1eb2a6;
+   background-color: #00796b;
    padding: 20px;
    z-index: 900;
 }
@@ -35,14 +35,14 @@
 .container_nav h1 {
    margin-right: 40px;
    font-size: 15px;
-   font-family: 'metropolis';
+   font-family: serif;
    text-transform: uppercase;
    color: #f2f2f2f2;
    cursor: pointer;
 }
 
 .container_nav h1:hover {
-   color: red;
+   color: #f85a40;
    transform: scaleX(1.1);
 }
 
@@ -59,8 +59,9 @@
 
 .container_content_title h1 {
    font-size: 15px;
-   font-family: 'metropolis';
+   font-family: serif;
    text-transform: uppercase;
+   border-bottom: 2px solid #f85a40;
 }
 
 .container_content_body_video {
@@ -77,12 +78,15 @@
 }
 
 .container_content_body {
-   width: 70%;
+   width: 50%;
    margin: 3% auto;
+   margin-bottom: 10px;
+   line-height: 2;
 }
 
 .container_content_body p{
-   margin-bottom: 10px;
+   font-family: serif;
+   font-size: 18px;
 }
 
 .circle_container {
