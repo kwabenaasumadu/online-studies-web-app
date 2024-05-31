@@ -17,8 +17,8 @@ function Index() {
           <div className={styles.container_item_1}>
             <Image
               src={LogoImage}
-              width={180}
-              height={180}
+              width={500}
+              height={500}
               alt="cod_innovation"
               className={styles.logo}
             />{" "}
