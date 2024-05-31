@@ -238,3 +238,45 @@
       cursor: pointer;
    }
 }
+
+
+
+ /*mobile phones 375 - 900  x 640 - 900 */
+ @media (min-width: 375px) and (max-width: 900px) and (min-height: 640px) and (max-height: 900px) {
+   .container_items {
+      grid-template-columns: auto;
+      width: 90%;
+   }
+
+   .container_items_2 h1 {
+      font-size: 20px;
+      width: 100%;
+   }
+
+   .container_items_2_box {
+      padding: 7px;
+   }
+
+   .logo {
+      font-size: 50px;
+      color: #1eb2a6;
+   }
+
+   .container_items_2_box_details h1 {
+      font-size: 15px;
+      font-family: 'metropolis';
+   }
+
+   .container_items_2_box_details p {
+      font-size: 14px;
+      font-family: 'metropolis';
+      font-weight: 100;
+      letter-spacing: 1px;
+   }
+
+   .container_items_2_box_responsive {
+      animation-name: fadeIn;
+      animation-duration: 7.5s;
+      animation-fill-mode: forwards;
+   }
+ }

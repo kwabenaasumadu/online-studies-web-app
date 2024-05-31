@@ -217,7 +217,6 @@
 
    .container_items_box_icon {
       font-size: 45px;
-      background-color: #1eb2a6;
       color: #fff;
    }
 
@@ -229,7 +228,6 @@
    .price h1 {
       font-size: 13px;
       font-weight: 100;
-      color: #1eb2a6;
    }
 
    .container_items_box_responsive{
@@ -250,8 +248,6 @@
       font-size: 17px;
       text-decoration: none;
       text-transform: uppercase;
-      color: #1eb2a6;
-      border: 1px solid #1eb2a6;
       padding: 7px;
    }
 
@@ -370,3 +366,10 @@
       font-size: 2.2em;
    }
 }
+
+
+
+ /*mobile phones 375 - 900  x 640 - 900 */
+ @media (min-width: 375px) and (max-width: 900px) and (min-height: 640px) and (max-height: 900px) {
+
+ }
